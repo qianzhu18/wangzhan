@@ -1,0 +1,222 @@
+.ai-chat-section {
+    padding: 5rem 2rem;
+    background: var(--dark-bg);
+    margin: 2rem auto;
+    border: 1px solid var(--accent-color);
+    border-radius: 10px;
+}
+
+.chat-container {
+    position: relative;
+    max-width: 800px;
+    margin: 2rem auto;
+    background: rgba(26, 27, 47, 0.9);
+    border-radius: 10px;
+    box-shadow: 
+        0 0 20px rgba(0, 245, 255, 0.2),
+        0 0 40px rgba(0, 245, 255, 0.1);
+    overflow: hidden;
+    border: 1px solid var(--accent-color);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 20px rgba(0, 245, 255, 0.2);
+    }
+    to {
+        box-shadow: 0 0 40px rgba(0, 245, 255, 0.4);
+    }
+}
+
+.chat-messages {
+    height: 500px;
+    overflow-y: auto;
+    padding: 1.5rem;
+    background: rgba(26, 27, 47, 0.8);
+}
+
+.message {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+}
+
+.user-message {
+    align-self: flex-end;
+    align-items: flex-end;
+    margin-left: auto;
+}
+
+.ai-message {
+    align-self: flex-start;
+    align-items: flex-start;
+}
+
+.message-content {
+    padding: 1rem;
+    border-radius: 15px;
+    margin-bottom: 0.3rem;
+    word-wrap: break-word;
+}
+
+.user-message .message-content {
+    background: rgba(74, 144, 226, 0.3);
+    color: white;
+    border: 1px solid var(--primary-color);
+}
+
+.ai-message .message-content {
+    background: rgba(0, 245, 255, 0.15);
+    color: #00ff00;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+    border: 1px solid var(--accent-color);
+    box-shadow: 
+        0 0 10px rgba(0, 245, 255, 0.2),
+        inset 0 0 5px rgba(0, 245, 255, 0.1);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.system-message .message-content {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    text-align: center;
+    font-style: italic;
+}
+
+.message-time {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.chat-input-container {
+    display: flex;
+    padding: 1rem;
+    background: rgba(26, 27, 47, 0.9);
+    border-top: 1px solid var(--accent-color);
+}
+
+.chat-input {
+    flex: 1;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--accent-color);
+    border-radius: 20px;
+    color: white;
+    margin: 0 1rem;
+}
+
+.chat-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.chat-send-btn, .chat-upload-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--accent-color);
+    background: rgba(0, 245, 255, 0.2);
+    color: var(--accent-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.chat-send-btn:hover, .chat-upload-btn:hover {
+    background: rgba(0, 245, 255, 0.4);
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+.chat-send-btn i, .chat-upload-btn i {
+    font-size: 1rem;
+}
+
+/* 加载动画 */
+.typing-indicator {
+    display: flex;
+    padding: 0.5rem 1rem;
+    background: #e9ecef;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    width: fit-content;
+}
+
+.typing-dot {
+    width: 8px;
+    height: 8px;
+    margin: 0 2px;
+    background: #6c757d;
+    border-radius: 50%;
+    animation: typing 1s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .chat-messages {
+        height: 400px;
+    }
+
+    .message {
+        max-width: 90%;
+    }
+}
+
+.chat-upload-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+    transition: background 0.3s ease;
+}
+
+.chat-upload-btn:hover {
+    background: var(--secondary-color);
+}
+
+.chat-upload-btn i {
+    font-size: 1rem;
+}
+
+/* 添加滚动条样式 */
+.chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: rgba(0, 245, 255, 0.1);
+    border-radius: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 4px;
+} 

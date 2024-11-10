@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>张锦鸿的个人网站</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/carousel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="styles/chat.css">
+    <script src="js/config.js"></script>
+    <script src="js/moonshot.js"></script>
+    <script src="js/chat.js" defer></script>
+    <script src="js/carousel.js" defer></script>
+</head>
+<body>
+    <!-- 科技风格背景 -->
+    <div class="tech-background"></div>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-brand">张锦鸿</div>
+        <div class="nav-links">
+            <a href="#about">关于我</a>
+            <a href="#portfolio">作品集</a>
+            <a href="#contact">联系我</a>
+        </div>
+    </nav>
+
+    <!-- 在导航栏后面添加 -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">科技？柯基！</h1>
+            <div class="hero-subtitle">Welcome to My Tech World</div>
+        </div>
+    </section>
+
+    <!-- 轮播展示区 -->
+    <section class="carousel">
+        <div class="carousel-container">
+            <div class="carousel-slide active">
+                <img src="images/slide1.jpg" alt="乔布斯传">
+            </div>
+            <div class="carousel-slide">
+                <img src="images/slide2.jpg" alt="马斯克传">
+            </div>
+            <div class="carousel-slide">
+                <img src="images/slide3.jpg" alt="人工智能时代">
+            </div>
+        </div>
+        <button class="carousel-button prev">&lt;</button>
+        <button class="carousel-button next">&gt;</button>
+        <div class="carousel-thumbnails"></div>
+    </section>
+
+    <!-- 个人简介区 -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>关于我</h2>
+                    <p>这里是您的个人简介内容...</p>
+                </div>
+                <div class="about-image">
+                    <img src="images/@微信图片_20241110173238.jpg" alt="个人照片" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作品展示区 -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <h2 data-aos="fade-up">作品集</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-aos="fade-up">
+                    <img src="https://source.unsplash.com/featured/400x300?design" alt="作品1">
+                    <div class="portfolio-overlay">
+                        <h3>作品标题1</h3>
+                        <p>作品描述...</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-aos="fade-up">
+                    <img src="https://source.unsplash.com/featured/400x300?art" alt="作品2">
+                    <div class="portfolio-overlay">
+                        <h3>作品标题2</h3>
+                        <p>作品描述...</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-aos="fade-up">
+                    <img src="https://source.unsplash.com/featured/400x300?creative" alt="作品3">
+                    <div class="portfolio-overlay">
+                        <h3>作品标题3</h3>
+                        <p>作品描述...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI 助手部分 -->
+    <section id="ai-chat" class="ai-chat-section">
+        <div class="container">
+            <h2 data-aos="fade-up">AI 助手</h2>
+            <div class="chat-container" data-aos="fade-up">
+                <div class="chat-messages" id="chatMessages">
+                    <!-- 初始消息 -->
+                    <div class="message ai-message">
+                        <div class="message-content">
+                            你好！我是基于 Moonshot AI 的智能助手。我可以：
+                            <br>1. 回答问题
+                            <br>2. 分析上传的文件
+                            <br>3. 提供技术建议
+                        </div>
+                        <div class="message-time">刚刚</div>
+                    </div>
+                </div>
+                <div class="chat-input-container">
+                    <button class="chat-upload-btn" title="上传文件">
+                        <i class="fas fa-file-upload"></i>
+                    </button>
+                    <textarea 
+                        id="chatInput" 
+                        placeholder="输入消息，按 Enter 发送..." 
+                        rows="1"
+                        class="chat-input"
+                    ></textarea>
+                    <button id="sendMessage" class="chat-send-btn" title="发送消息">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系表单区 -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 data-aos="fade-up">联系我</h2>
+            <div class="contact-content">
+                <form id="contact-form" data-aos="fade-up">
+                    <div class="form-group">
+                        <input type="text" id="name" required placeholder="您的姓名">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" required placeholder="您的邮箱">
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" required placeholder="请输入留言内容..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">发送消息</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚社交媒体区 -->
+    <footer class="footer">
+        <div class="social-links">
+            <!-- QQ链接 - 使用QQ的直接聊天链接 -->
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=2729478828&site=qq&menu=yes" class="social-link" target="_blank" title="QQ: 2729478828">
+                <i class="fab fa-qq"></i>
+            </a>
+            
+            <!-- 微信二维码 -->
+            <a href="weixin://" class="social-link wechat-link" title="微信: ZJH2729478858">
+                <i class="fab fa-weixin"></i>
+                <div class="wechat-qr">
+                    <img src="images/wechat-qr.jpg" alt="微信二维码">
+                    <p>扫码添加微信</p>
+                    <p class="wechat-id">微信号：ZJH2729478858</p>
+                </div>
+            </a>
+            
+            <!-- 哔哩哔哩链接 -->
+            <a href="https://b23.tv/k5gealP" class="social-link" target="_blank" title="哔哩哔哩: Z56锦">
+                <i class="fab fa-bilibili"></i>
+            </a>
+        </div>
+        <p class="copyright">© 2024 张锦鸿. All rights reserved.</p>
+    </footer>
+</body>
+</html>

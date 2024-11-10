@@ -1,0 +1,470 @@
+:root {
+    --primary-color: #4A90E2;
+    --secondary-color: #7B68EE;
+    --accent-color: #00F5FF;
+    --dark-bg: #1A1B2F;
+    --light-text: #E6E6FA;
+    --neon-shadow: 0 0 10px var(--accent-color);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--light-text);
+    background: var(--dark-bg);
+}
+
+/* 添加科技风格的网格背景 */
+.tech-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(to right, rgba(74, 144, 226, 0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(74, 144, 226, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+    z-index: -1;
+}
+
+/* 添加打字机效果的标题 */
+.hero-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    text-shadow: var(--neon-shadow);
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 4px solid var(--accent-color);
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--accent-color) }
+}
+
+/* 导航栏样式 */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(26, 27, 47, 0.95);
+    border-bottom: 1px solid var(--accent-color);
+    box-shadow: 0 2px 10px rgba(0, 245, 255, 0.2);
+    z-index: 1000;
+}
+
+.nav-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    text-shadow: var(--neon-shadow);
+}
+
+.nav-links a {
+    margin-left: 2rem;
+    text-decoration: none;
+    color: var(--light-text);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+    text-shadow: var(--neon-shadow);
+}
+
+/* 关于我区域样式 */
+.about-section {
+    padding: 5rem 2rem;
+    background: var(--light-bg);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* 作品展示区样式 */
+.portfolio-section {
+    padding: 5rem 2rem;
+    background: white;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-overlay {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem;
+    background: rgba(44, 62, 80, 0.9);
+    color: white;
+    transition: bottom 0.3s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    bottom: 0;
+}
+
+/* 联系表单样式 */
+.contact-section {
+    padding: 5rem 2rem;
+    background: var(--light-bg);
+}
+
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: var(--secondary-color);
+}
+
+/* 页脚样式 */
+.footer {
+    padding: 3rem 2rem;
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-link {
+    position: relative;
+    color: white;
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+    padding: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px var(--accent-color);
+}
+
+.social-link .fa-qq:hover {
+    color: #12B7F5;
+}
+
+.social-link .fa-weixin:hover {
+    color: #07C160;
+}
+
+.social-link .fa-bilibili:hover {
+    color: #FB7299;
+}
+
+.social-link .fa-github:hover {
+    color: #333;
+}
+
+.social-link .fa-linkedin:hover {
+    color: #0077b5;
+}
+
+.social-link .fa-weibo:hover {
+    color: #e6162d;
+}
+
+/* 添加平滑滚动 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+}
+
+/* 更新hero部分的样式 */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: var(--dark-bg);
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 4.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    text-shadow: 
+        0 0 10px var(--accent-color),
+        0 0 20px var(--accent-color),
+        0 0 30px var(--accent-color);
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--light-text);
+    opacity: 0;
+    animation: fadeInUp 1s ease 0.5s forwards;
+}
+
+/* 添加动画 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 更新section样式 */
+.about-section, .portfolio-section, .ai-chat-section, .contact-section {
+    background: rgba(26, 27, 47, 0.8);
+    border: 1px solid var(--accent-color);
+    border-radius: 10px;
+    margin: 2rem auto;
+    padding: 4rem 2rem;
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.1);
+}
+
+/* 更新图片容器样式 */
+.about-image img, .portfolio-item img {
+    width: 100%;
+    height: auto;
+    border: 2px solid var(--accent-color);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 245, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-image img:hover, .portfolio-item img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 25px rgba(0, 245, 255, 0.4);
+}
+
+/* 添加科技风格的装饰线条 */
+.tech-line {
+    position: absolute;
+    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+    height: 1px;
+    width: 100%;
+    animation: scan 3s linear infinite;
+}
+
+@keyframes scan {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+/* 添加bilibili图标（因为Font Awesome可能没有bilibili图标） */
+.fa-bilibili:before {
+    content: "B站";
+    font-style: normal;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* 微信二维码弹窗样式 */
+.wechat-qr {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+    display: none;
+    text-align: center;
+    width: 150px;
+    border: 1px solid var(--accent-color);
+}
+
+.wechat-qr img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.wechat-qr p {
+    margin-top: 0.5rem;
+    color: var(--dark-bg);
+    font-size: 0.9rem;
+}
+
+.wechat-link:hover .wechat-qr {
+    display: block;
+}
+
+/* 在已有样式的基础上添加或修改以下内容 */
+
+/* AI聊天区域的基础样式 */
+.ai-chat-section {
+    min-height: 600px;
+    padding: 4rem 2rem;
+    margin: 2rem auto;
+    background: rgba(26, 27, 47, 0.95) !important;  /* 使用 !important 确保背景色生效 */
+    border: 2px solid var(--accent-color);
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 245, 255, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+/* AI聊天区域的标题样式 */
+.ai-chat-section h2 {
+    color: var(--accent-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    text-shadow: 0 0 10px var(--accent-color);
+}
+
+/* 聊天容器的样式调整 */
+.chat-container {
+    background: rgba(26, 27, 47, 0.98) !important;
+    border: 1px solid var(--accent-color);
+    box-shadow: 
+        0 0 20px rgba(0, 245, 255, 0.2),
+        inset 0 0 10px rgba(0, 245, 255, 0.1);
+    height: 600px;  /* 确保有固定高度 */
+    display: flex;
+    flex-direction: column;
+}
+
+/* 确保消息区域可见 */
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.5rem;
+    background: rgba(26, 27, 47, 0.95);
+    border-bottom: 1px solid var(--accent-color);
+}
+
+/* 输入区域样式调整 */
+.chat-input-container {
+    padding: 1rem;
+    background: rgba(26, 27, 47, 0.98);
+    border-top: 1px solid var(--accent-color);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
